@@ -2,8 +2,6 @@
 # houzee
 ### Application structure
 
-After successful build, your application structure should look like this:
-
 ```
 .
 ├── android                         - It contains files required to run the application on an Android platform.
