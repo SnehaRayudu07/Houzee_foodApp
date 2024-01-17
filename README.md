@@ -18,7 +18,7 @@ Currently the repository contains code for the app's frontend, backend, and a pr
 - **Firebase**: Powering the backend with Realtime Database, Firestore, Authentication, Cloud Functions, and Cloud Storage.<br></br>
 - **Google Maps API**: Enhancing user experience with accurate and real-time tracking.<br></br>
 
-Made by: 
+Made by:<br></br>
 Kapil Surya<br></br>
 Samaya Argula<br></br>
 Sneha Subbarayudu<br></br>
