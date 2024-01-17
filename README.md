@@ -6,19 +6,19 @@ Currently the repository contains code for the app's frontend, backend, and a pr
 
 ## Features
 
--**Smart Meal Recommendations**: A recommendation engine that analyzes users' preferences, past orders, and dietary restrictions to suggest personalized meal options.
--**Community Ratings and Reviews**: Users can rate and review meals they've ordered.
--**Meal Subscriptions**: A subscription model can allow users to subscribe to their favorite homemakers for a regular supply of weekly or monthly meals.
--**Cooking Classes and Live Demos**: Homemakers can offer virtual cooking classes through the app.
--**Special Diet Filters**: Users can filter meals based on special dietary preferences such as vegetarian, vegan, gluten-free, or keto.
+-**Smart Meal Recommendations**: A recommendation engine that analyzes users' preferences, past orders, and dietary restrictions to suggest personalized meal options.<br></br>
+-**Community Ratings and Reviews**: Users can rate and review meals they've ordered.<br></br>
+-**Meal Subscriptions**: A subscription model can allow users to subscribe to their favorite homemakers for a regular supply of weekly or monthly meals.<br></br>
+-**Cooking Classes and Live Demos**: Homemakers can offer virtual cooking classes through the app.<br></br>
+-**Special Diet Filters**: Users can filter meals based on special dietary preferences such as vegetarian, vegan, gluten-free, or keto.<br></br>
 
 ## Tech Stack
 
-- **Flutter**: For a rich and responsive cross-platform frontend.
-- **Firebase**: Powering the backend with Realtime Database, Firestore, Authentication, Cloud Functions, and Cloud Storage.
-- **Google Maps API**: Enhancing user experience with accurate and real-time tracking.
+- **Flutter**: For a rich and responsive cross-platform frontend.<br></br>
+- **Firebase**: Powering the backend with Realtime Database, Firestore, Authentication, Cloud Functions, and Cloud Storage.<br></br>
+- **Google Maps API**: Enhancing user experience with accurate and real-time tracking.<br></br>
 
 Made by: 
-Kapil Surya
-Samaya Argula
-Sneha Subbarayudu
+Kapil Surya<br></br>
+Samaya Argula<br></br>
+Sneha Subbarayudu<br></br>
