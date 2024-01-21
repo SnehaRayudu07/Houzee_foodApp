@@ -17,8 +17,8 @@ class WelcomeScreen extends GetWidget<WelcomeController> {
                 height: SizeUtils.height,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
-                        begin: Alignment(0.5, 0),
-                        end: Alignment(0.5, 1),
+                        //begin: Alignment(0.5, 0),
+                        //end: Alignment(0.5, 1),
                         colors: [
                       appTheme.lightGreenA70033,
                       appTheme.greenA70033
@@ -26,56 +26,56 @@ class WelcomeScreen extends GetWidget<WelcomeController> {
                 child: SizedBox(
                     width: double.maxFinite,
                     child: Column(mainAxisSize: MainAxisSize.min, children: [
-                      SizedBox(height: 2.v),
+                      SizedBox(height: 250.v),
                       SizedBox(
-                          height: 913.v,
-                          width: 409.h,
-                          child:
-                              Stack(alignment: Alignment.topCenter, children: [
+                          height: 200.v,
+                          width: 200.h,
+                          child:                           
                             CustomImageView(
-                                imagePath: ImageConstant.imgWel51913x409,
-                                height: 913.v,
-                                width: 409.h,
+                                alignment: Alignment.center,
+                                imagePath: ImageConstant.imgRectangle129,
+                                height: 200.v,
+                                width: 200.h,
                                 radius: BorderRadius.circular(13.h),
-                                alignment: Alignment.center),
-                            Align(
-                                alignment: Alignment.topCenter,
-                                child: Padding(
-                                    padding: EdgeInsets.only(
-                                        left: 78.h, top: 57.v, right: 81.h),
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          CustomImageView(
-                                              imagePath:
-                                                  ImageConstant.imgRectangle129,
-                                              height: 183.v,
-                                              width: 245.h),
-                                          SizedBox(height: 71.v),
-                                          CustomElevatedButton(
-                                              height: 53.v,
-                                              text: "lbl_get_started".tr,
-                                              rightIcon: Container(
-                                                  margin: EdgeInsets.only(
-                                                      left: 15.h),
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              1.h)),
-                                                  child: CustomImageView(
-                                                      imagePath:
-                                                          ImageConstant.imgUser,
-                                                      height: 23.v,
-                                                      width: 21.h)),
-                                              buttonStyle: CustomButtonStyles
-                                                  .fillSecondaryContainer,
-                                              buttonTextStyle: CustomTextStyles
-                                                  .headlineSmallBluegray10001,
-                                              onPressed: () {
-                                                onTapGetStarted();
-                                              })
-                                        ])))
-                          ]))
+                               ),
+                            // Align(
+                            //     alignment: Alignment.topCenter,
+                            //     child: Padding(
+                            //         padding: EdgeInsets.only(
+                            //             left: 78.h, top: 57.v, right: 81.h),
+                            //         child: Column(
+                            //             mainAxisSize: MainAxisSize.min,
+                            //             children: [
+                            //               CustomImageView(
+                            //                   imagePath:
+                            //                       ImageConstant.imgRectangle129,
+                            //                   height: 183.v,
+                            //                   width: 245.h),
+                            //               SizedBox(height: 71.v),
+                            //               CustomElevatedButton(
+                            //                   height: 53.v,
+                            //                   text: "lbl_get_started".tr,
+                            //                   rightIcon: Container(
+                            //                       margin: EdgeInsets.only(
+                            //                           left: 15.h),
+                            //                       decoration: BoxDecoration(
+                            //                           borderRadius:
+                            //                               BorderRadius.circular(
+                            //                                   1.h)),
+                            //                       child: CustomImageView(
+                            //                           imagePath:
+                            //                               ImageConstant.imgUser,
+                            //                           height: 23.v,
+                            //                           width: 21.h)),
+                            //                   buttonStyle: CustomButtonStyles
+                            //                       .fillSecondaryContainer,
+                            //                   buttonTextStyle: CustomTextStyles
+                            //                       .headlineSmallBluegray10001,
+                            //                   onPressed: () {
+                            //                     onTapGetStarted();
+                            //                   })
+                            //             ])))
+                          )
                     ])))));
   }
 

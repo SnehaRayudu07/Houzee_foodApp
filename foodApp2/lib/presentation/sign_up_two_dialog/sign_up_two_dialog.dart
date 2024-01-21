@@ -39,7 +39,7 @@ class SignUpTwoDialog extends StatelessWidget {
                         onTap: () {
                           onTapImgVectorSeven();
                         }),
-                    SizedBox(height: 56.v),
+                    SizedBox(height: 50.v),
                     Padding(
                         padding: EdgeInsets.only(left: 100.h),
                         child: Text("lbl_sign_up".tr,
@@ -55,10 +55,10 @@ class SignUpTwoDialog extends StatelessWidget {
                     SizedBox(height: 23.v),
                     _buildNeverHungryAgain(),
                     SizedBox(height: 33.v),
-                    Padding(
-                        padding: EdgeInsets.only(left: 47.h),
-                        child: Text("lbl_or_sign_up_with".tr,
-                            style: CustomTextStyles.bodyMediumGray500e5)),
+                    // Padding(
+                    //     padding: EdgeInsets.only(left: 47.h),
+                    //     child: Text("lbl_or_sign_up_with".tr,
+                    //         style: CustomTextStyles.bodyMediumGray500e5)),
                   ]))
         ]));
   }
