@@ -198,7 +198,7 @@ class RestaurantPageScreen extends GetWidget<RestaurantPageController> {
             padding: EdgeInsets.only(left: 26.h, right: 20.h),
             child: Obx(() => ListView.separated(
                 scrollDirection: Axis.vertical,
-                //physics: NeverScrollableScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 separatorBuilder: (context, index) {
                   return SizedBox(height: 8.v);

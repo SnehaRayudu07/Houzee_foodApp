@@ -13,31 +13,28 @@ class CooksMainPageScreen extends GetWidget<CooksMainPageController> {
         child: Scaffold(
             bottomNavigationBar: _buildBottomBar(),
             body: SizedBox(
-                width: double.maxFinite,
-                child: SingleChildScrollView(
+              width: double.maxFinite,
+              child: SingleChildScrollView(
                   child: Form(
-                    child: Container(
-                        child: Stack( alignment: AlignmentDirectional.topStart,
-                        children: [
-                          Container(
+                child: Container(
+                  child: Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: [
+                        Container(
                             alignment: Alignment.topCenter,
-                            child: _buildRestaurantDetails()
-                            ),
-                          Container(
+                            child: _buildRestaurantDetails()),
+                        Container(
                             margin: EdgeInsets.only(top: 250),
-                            child: _buildDishesDetails()
-                            ),
-                             Container(
+                            child: _buildDishesDetails()),
+                        Container(
                             margin: EdgeInsets.only(top: 450),
-                            child: _buildDishesDetails()
-                            ),
-                          Container(
+                            child: _buildDishesDetails()),
+                        Container(
                             margin: EdgeInsets.only(top: 650),
-                            child: _buildDishesLast()
-                          )
-                        ]),
-                  ),
-                )),
+                            child: _buildDishesLast())
+                      ]),
+                ),
+              )),
             )));
   }
 
@@ -76,7 +73,7 @@ class CooksMainPageScreen extends GetWidget<CooksMainPageController> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text("lbl_restaurant_name".tr,
+                                            Text("Cooks name".tr,
                                                 style: theme
                                                     .textTheme.headlineMedium),
                                             SizedBox(height: 17.v),
@@ -105,8 +102,7 @@ class CooksMainPageScreen extends GetWidget<CooksMainPageController> {
         ]));
   }
 
-
-    Widget _buildDishesDetails() {
+  Widget _buildDishesDetails() {
     return Container(
         width: double.maxFinite,
         child: Stack(alignment: Alignment.center, children: [
@@ -151,17 +147,16 @@ class CooksMainPageScreen extends GetWidget<CooksMainPageController> {
                         text: "lbl_update".tr,
                         buttonTextStyle: CustomTextStyles.bodySmallGreen1008)
                   ]))),
-
         ]));
   }
- Widget _buildDishesLast() {
-  return  Padding(
-  padding: EdgeInsets.only(left: 39.h, right: 69.h),
-  child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Align(
-            alignment: Alignment.bottomLeft,
+
+  Widget _buildDishesLast() {
+    return Padding(
+        padding: EdgeInsets.only(left: 39.h, right: 69.h),
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Align(
+              alignment: Alignment.bottomLeft,
               child: Column(mainAxisSize: MainAxisSize.min, children: [
                 CustomImageView(
                     imagePath: ImageConstant.imgHowToPrepare121x119,
@@ -178,18 +173,17 @@ class CooksMainPageScreen extends GetWidget<CooksMainPageController> {
                     text: "lbl_update".tr,
                     buttonTextStyle: CustomTextStyles.bodySmallGreen1008)
               ])),
-        Align(
-            child: Column(children: [
-              CustomElevatedButton(
-                  height: 25.v,
-                  width: 50.h,
-                  margin: EdgeInsets.all(20),
-                  text: "Add".tr,
-                  buttonTextStyle: CustomTextStyles
-                      .bodySmallAladinGreen100)
-            ]))
-      ]));
- }
+          Align(
+              child: Column(children: [
+            CustomElevatedButton(
+                height: 25.v,
+                width: 50.h,
+                margin: EdgeInsets.all(20),
+                text: "Add".tr,
+                buttonTextStyle: CustomTextStyles.bodySmallAladinGreen100)
+          ]))
+        ]));
+  }
 
   /// Section Widget
   Widget _buildBottomBar() {
