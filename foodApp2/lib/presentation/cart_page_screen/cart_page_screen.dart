@@ -58,19 +58,19 @@ class CartPageScreen extends GetWidget<CartPageController> {
                                         text: "\n ".tr,
                                         style: CustomTextStyles
                                             .bodyMediumfff69235),
-                                    TextSpan(
-                                        text:
-                                            "                \n            \n \n\n"
-                                                .tr,
-                                        style: CustomTextStyles
-                                            .bodyMediumff000000),
-                                    TextSpan(
-                                        text: "\n ".tr,
-                                        style:
-                                            CustomTextStyles.bodyMediumffffffff)
+                                    // TextSpan(
+                                    //     text:
+                                    //         "                \n            \n \n\n"
+                                    //             .tr,
+                                    //     style: CustomTextStyles
+                                    //         .bodyMediumff000000),
+                                    // TextSpan(
+                                    //     text: "\n ".tr,
+                                    //     style:
+                                    //         CustomTextStyles.bodyMediumffffffff)
                                   ]),
                                   textAlign: TextAlign.right))),
-                      SizedBox(height: 24.v),
+                      // SizedBox(height: 24.v),
                       Align(
                           alignment: Alignment.centerRight,
                           child: Padding(
@@ -80,7 +80,7 @@ class CartPageScreen extends GetWidget<CartPageController> {
                                   children: [
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            top: 8.v, bottom: 1.v),
+                                            top: 3.v, bottom: 1.v),
                                         child: Text("lbl_voucher".tr,
                                             style: CustomTextStyles
                                                 .bodyMediumBlack90001)),
@@ -128,7 +128,7 @@ class CartPageScreen extends GetWidget<CartPageController> {
                                   textAlign: TextAlign.left))),
                       SizedBox(height: 55.v),
                       Container(
-                          height: 30.v,
+                          height: 15.v,
                           width: 340.h,
                           margin: EdgeInsets.only(left: 21.h),
                           decoration: BoxDecoration(
@@ -276,7 +276,7 @@ class CartPageScreen extends GetWidget<CartPageController> {
                                       padding: EdgeInsets.only(left: 9.h),
                                       child: Text("lbl_mushroom".tr,
                                           style: theme.textTheme.bodySmall)),
-                                  SizedBox(height: 5.v),
+                                  // SizedBox(height: 5.v),
                                   SizedBox(
                                       width: 173.h,
                                       child: Row(
@@ -287,7 +287,7 @@ class CartPageScreen extends GetWidget<CartPageController> {
                                           children: [
                                             Padding(
                                                 padding:
-                                                    EdgeInsets.only(top: 11.v),
+                                                    EdgeInsets.only(top: 10.v),
                                                 child: Text("msg_5".tr,
                                                     style: CustomTextStyles
                                                         .bodySmallRoboto)),
