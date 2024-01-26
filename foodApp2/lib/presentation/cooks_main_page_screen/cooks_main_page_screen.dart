@@ -11,64 +11,40 @@ class CooksMainPageScreen extends GetWidget<CooksMainPageController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            bottomNavigationBar: _buildBottomBar(),
             body: SizedBox(
                 width: double.maxFinite,
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildRestaurantDetails(),
-                      SizedBox(height: 35.v),
-                      Padding(
-                          padding: EdgeInsets.only(left: 39.h, right: 69.h),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      CustomImageView(
-                                          imagePath:
-                                              ImageConstant.imgRectangle33,
-                                          height: 117.v,
-                                          width: 119.h,
-                                          radius: BorderRadius.circular(45.h)),
-                                      SizedBox(height: 20.v),
-                                      Padding(
-                                          padding: EdgeInsets.only(left: 19.h),
-                                          child: Text("lbl_white_rice".tr,
-                                              style: CustomTextStyles
-                                                  .bodyLargeOnPrimary)),
-                                      SizedBox(height: 17.v),
-                                      CustomImageView(
-                                          imagePath: ImageConstant.imgGroup56,
-                                          height: 25.v,
-                                          width: 79.h,
-                                          margin: EdgeInsets.only(left: 16.h))
-                                    ]),
-                                Padding(
-                                    padding: EdgeInsets.only(top: 63.v),
-                                    child: Column(children: [
-                                      Text("lbl_add_item".tr,
-                                          style: theme.textTheme.headlineSmall),
-                                      SizedBox(height: 81.v),
-                                      CustomElevatedButton(
-                                          height: 25.v,
-                                          width: 79.h,
-                                          text: "lbl_add_dish".tr,
-                                          buttonTextStyle: CustomTextStyles
-                                              .bodySmallAladinGreen100)
-                                    ]))
-                              ])),
-                      SizedBox(height: 5.v)
-                    ])),
-            bottomNavigationBar: _buildBottomBar()));
+                child: SingleChildScrollView(
+                  child: Form(
+                    child: Container(
+                        child: Stack( alignment: AlignmentDirectional.topStart,
+                        children: [
+                          Container(
+                            alignment: Alignment.topCenter,
+                            child: _buildRestaurantDetails()
+                            ),
+                          Container(
+                            margin: EdgeInsets.only(top: 250),
+                            child: _buildDishesDetails()
+                            ),
+                             Container(
+                            margin: EdgeInsets.only(top: 450),
+                            child: _buildDishesDetails()
+                            ),
+                          Container(
+                            margin: EdgeInsets.only(top: 650),
+                            child: _buildDishesLast()
+                          )
+                        ]),
+                  ),
+                )),
+            )));
   }
 
   /// Section Widget
   Widget _buildRestaurantDetails() {
     return SizedBox(
-        height: 456.v,
+        height: 250.v,
         width: double.maxFinite,
         child: Stack(alignment: Alignment.bottomRight, children: [
           Align(
@@ -119,13 +95,21 @@ class CooksMainPageScreen extends GetWidget<CooksMainPageController> {
                                     BorderRadiusStyle.customBorderTL26),
                             child: Column(
                                 mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  SizedBox(height: 67.v),
+                                  SizedBox(height: 10.v),
                                   Text("lbl_your_menu".tr,
                                       style: theme.textTheme.titleLarge)
                                 ]))
                       ]))),
+        ]));
+  }
+
+
+    Widget _buildDishesDetails() {
+    return Container(
+        width: double.maxFinite,
+        child: Stack(alignment: Alignment.center, children: [
           Align(
               alignment: Alignment.bottomRight,
               child: Padding(
@@ -166,9 +150,46 @@ class CooksMainPageScreen extends GetWidget<CooksMainPageController> {
                         width: 79.h,
                         text: "lbl_update".tr,
                         buttonTextStyle: CustomTextStyles.bodySmallGreen1008)
-                  ])))
+                  ]))),
+
         ]));
   }
+ Widget _buildDishesLast() {
+  return  Padding(
+  padding: EdgeInsets.only(left: 39.h, right: 69.h),
+  child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Align(
+            alignment: Alignment.bottomLeft,
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+                CustomImageView(
+                    imagePath: ImageConstant.imgHowToPrepare121x119,
+                    height: 121.v,
+                    width: 119.h,
+                    radius: BorderRadius.circular(45.h)),
+                SizedBox(height: 6.v),
+                Text("lbl_fried_rice".tr,
+                    style: CustomTextStyles.bodyLargeOnPrimary),
+                SizedBox(height: 18.v),
+                CustomElevatedButton(
+                    height: 25.v,
+                    width: 79.h,
+                    text: "lbl_update".tr,
+                    buttonTextStyle: CustomTextStyles.bodySmallGreen1008)
+              ])),
+        Align(
+            child: Column(children: [
+              CustomElevatedButton(
+                  height: 25.v,
+                  width: 50.h,
+                  margin: EdgeInsets.all(20),
+                  text: "Add".tr,
+                  buttonTextStyle: CustomTextStyles
+                      .bodySmallAladinGreen100)
+            ]))
+      ]));
+ }
 
   /// Section Widget
   Widget _buildBottomBar() {
