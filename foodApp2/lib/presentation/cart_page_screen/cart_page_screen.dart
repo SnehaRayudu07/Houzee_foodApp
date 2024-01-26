@@ -5,8 +5,6 @@ import 'package:houzee/widgets/custom_elevated_button.dart';
 import 'package:houzee/widgets/custom_icon_button.dart';
 import 'package:houzee/widgets/custom_text_form_field.dart';
 
-//commit
-
 class CartPageScreen extends GetWidget<CartPageController> {
   const CartPageScreen({Key? key}) : super(key: key);
 
