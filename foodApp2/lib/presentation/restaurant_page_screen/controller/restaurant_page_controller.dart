@@ -8,10 +8,10 @@ import 'package:houzee/presentation/restaurant_page_screen/models/restaurant_pag
 class RestaurantPageController extends GetxController {
   Rx<RestaurantPageModel> restaurantPageModelObj = RestaurantPageModel().obs;
 
-  @override
-  void onReady() {
-    Get.toNamed(
-      AppRoutes.cartPageScreen,
-    );
-  }
+  // @override
+  // void onReady() {
+  //   Get.toNamed(
+  //     AppRoutes.cartPageScreen,
+  //   );
+  // }
 }
