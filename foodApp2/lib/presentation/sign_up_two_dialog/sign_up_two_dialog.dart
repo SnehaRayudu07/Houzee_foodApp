@@ -194,7 +194,9 @@ class SignUpTwoDialog extends StatelessWidget {
       if (e.code == 'email-already-in-use') {
         showToast(message: 'The email address is already in use');
       } else if (e.code == 'mismatched-password') {
-        showToast(message: 'The passwords dont match');
+        showToast(
+            message:
+                'The passwords dont match. Please enter the same password.');
       } else {
         showToast(message: 'An error occured: ${e.code}');
       }
