@@ -8,6 +8,9 @@ class RestaurantPageModel {
     MenulistItemModel(
         dishName: "Dish 1".obs, dishPrice: "300 Rupees".obs, quantity: "2".obs),
     MenulistItemModel(dishName: "Dish 2".obs, dishPrice: "300 Rupees".obs),
-    MenulistItemModel(dishName: "Dish 3".obs, dishPrice: "300 Rupees".obs)
+    MenulistItemModel(dishName: "Dish 3".obs, dishPrice: "300 Rupees".obs),
+    MenulistItemModel(dishName: "Dish 4".obs, dishPrice: "300 Rupees".obs),
+    MenulistItemModel(dishName: "Dish 5".obs, dishPrice: "300 Rupees".obs),
+    MenulistItemModel(dishName: "Dish 6".obs, dishPrice: "300 Rupees".obs),
   ]);
 }

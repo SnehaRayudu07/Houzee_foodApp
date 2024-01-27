@@ -35,7 +35,7 @@ class MenulistItemWidget extends StatelessWidget {
                 margin: EdgeInsets.only(right: 32.h),
                 padding: EdgeInsets.symmetric(
                   horizontal: 106.h,
-                  vertical: 7.v,
+                  vertical: 5.v,
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -49,15 +49,15 @@ class MenulistItemWidget extends StatelessWidget {
                     ),
                     SizedBox(height: 11.v),
                     Padding(
-                      padding: EdgeInsets.only(left: 9.h),
+                      padding: EdgeInsets.only(left: 2.h),
                       child: Obx(
                         () => Text(
                           menulistItemModelObj.dishPrice!.value,
-                          style: theme.textTheme.titleLarge,
+                          style: theme.textTheme.titleMedium,
                         ),
                       ),
                     ),
-                    SizedBox(height: 11.v),
+                    SizedBox(height: 7.v),
                   ],
                 ),
               ),

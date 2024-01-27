@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houzee/core/app_export.dart';
+import 'package:houzee/core/utils/image_constant.dart';
 
 // ignore: must_be_immutable
 class CustomBottomBar extends StatelessWidget {
@@ -39,14 +40,14 @@ class CustomBottomBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: theme.colorScheme.primary,
         borderRadius: BorderRadius.vertical(
-          top: Radius.circular(8.h),
+          top: Radius.circular(10.h),
         ),
       ),
       child: Obx(
         () => BottomNavigationBar(
           backgroundColor: Colors.transparent,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
+          // showSelectedLabels: false,
+          // showUnselectedLabels: false,
           selectedFontSize: 0,
           elevation: 0,
           currentIndex: selectedIndex.value,
@@ -55,20 +56,29 @@ class CustomBottomBar extends StatelessWidget {
             return BottomNavigationBarItem(
               icon: CustomImageView(
                 imagePath: bottomMenuList[index].icon,
-                height: 22.v,
-                width: 21.h,
+                height: 30.v,
+                width: 30.h,
                 color: theme.colorScheme.primaryContainer,
               ),
               activeIcon: CustomImageView(
                 imagePath: bottomMenuList[index].activeIcon,
-                height: 34.v,
-                width: 46.h,
+                height: 30.v,
+                width: 30.h,
                 color: theme.colorScheme.primaryContainer,
               ),
               label: '',
             );
           }),
           onTap: (index) {
+            if(index == 0){
+              onTapBar1();
+            }
+            if(index == 1){
+              onTapBar2();
+            }
+            if(index == 2){
+              onTapBar3();
+            }
             selectedIndex.value = index;
             onChanged?.call(bottomMenuList[index].type);
           },
@@ -77,6 +87,21 @@ class CustomBottomBar extends StatelessWidget {
     );
   }
 }
+onTapBar1() {
+    Get.toNamed(
+      AppRoutes.cooksMainPageScreen,
+    );}
+onTapBar2() {
+    Get.toNamed(
+      AppRoutes.mealPlansScreen,
+    );}
+onTapBar3() {
+    Get.toNamed(
+      AppRoutes.profileScreen,
+    );}
+
+
+
 
 enum BottomBarEnum {
   Frame16,

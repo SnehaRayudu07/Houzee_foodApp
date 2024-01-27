@@ -16,12 +16,12 @@ class RestaurantPageScreen extends GetWidget<RestaurantPageController> {
         child: Scaffold(
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(vertical: 7.v),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                padding: EdgeInsets.symmetric(vertical: 0.v),
+                child: ListView(
+                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                          height: 497.v,
+                          height: 400.v,
                           width: double.maxFinite,
                           child: Stack(
                               alignment: Alignment.bottomCenter,
@@ -71,9 +71,11 @@ class RestaurantPageScreen extends GetWidget<RestaurantPageController> {
                           ])),
                       SizedBox(height: 21.v),
                       _buildCart(),
-                      SizedBox(height: 27.v),
+                      SizedBox(height: 15.v),
                       _buildMenuList()
-                    ]))));
+                    ])
+                //)//.
+                )));
   }
 
   /// Section Widget
@@ -87,7 +89,7 @@ class RestaurantPageScreen extends GetWidget<RestaurantPageController> {
               CustomImageView(
                   imagePath: ImageConstant.imgImage2417x412,
                   height: 417.v,
-                  width: 412.h,
+                  width: 415.h,
                   alignment: Alignment.center),
               CustomImageView(
                   imagePath: ImageConstant.imgFrame36,
@@ -159,7 +161,7 @@ class RestaurantPageScreen extends GetWidget<RestaurantPageController> {
                       child: Text("msg_our_fried_rice_is".tr,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
-                          style: CustomTextStyles.bodySmall10)),
+                          style: CustomTextStyles.bodyMedium15)),
                   SizedBox(height: 10.v)
                 ])));
   }
@@ -195,6 +197,7 @@ class RestaurantPageScreen extends GetWidget<RestaurantPageController> {
         child: Padding(
             padding: EdgeInsets.only(left: 26.h, right: 20.h),
             child: Obx(() => ListView.separated(
+                scrollDirection: Axis.vertical,
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 separatorBuilder: (context, index) {
