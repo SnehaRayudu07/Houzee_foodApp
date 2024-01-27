@@ -1,12 +1,31 @@
 //import 'package:firebase_auth/firebase_auth.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:houzee/core/app_export.dart';
 import 'package:houzee/widgets/custom_elevated_button.dart';
 import 'package:houzee/widgets/custom_icon_button.dart';
 
+// ignore: must_be_immutable
 class ProfileScreen extends GetWidget<ProfileController> {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  Future createUserInFirestore(User user, String username) async {
+    DocumentSnapshot doc =
+        await _firestore.collection('users').doc(user.uid).get();
+
+    if (!doc.exists) {
+      _firestore.collection('users').doc(user.uid).set({
+        'UserName': username,
+        'EmailUser': user.email,
+        'createdOn': DateTime.now(),
+      });
+    }
+  }
+
   get data => null;
   @override
   Widget build(BuildContext context) {
@@ -43,39 +62,54 @@ class ProfileScreen extends GetWidget<ProfileController> {
   }
 
   Widget _buildSubscriptionRow() {
-    return Padding(
-        padding: EdgeInsets.only(left: 6.h, right: 22.h),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomImageView(
-                  imagePath: ImageConstant.imgRectangle77173x186,
-                  height: 173.v,
-                  width: 186.h,
-                  radius: BorderRadius.circular(94.h),
-                  margin: EdgeInsets.only(bottom: 18.v)),
-              Padding(
-                  padding: EdgeInsets.only(top: 43.v),
-                  child: Column(children: [
-                    SizedBox(
-                        width: 72.h,
-                        child: Text('${data['username']}'.tr,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                            style: theme.textTheme.headlineLarge)),
-                    SizedBox(height: 25.v),
-                    CustomElevatedButton(
-                        height: 48.v,
-                        width: 102.h,
-                        text: "lbl_subscription".tr,
-                        buttonStyle: CustomButtonStyles.outlineBlackTL26,
-                        onPressed: () {
-                          onTapSubscription();
-                        })
-                  ]))
-            ]));
+    final User? user = _auth.currentUser;
+    return StreamBuilder<DocumentSnapshot>(
+      stream: _firestore.collection('users').doc(user?.uid).snapshots(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text('Error: ${snapshot.error}');
+        } else if (!snapshot.hasData) {
+          return CircularProgressIndicator();
+        } else if (snapshot.hasData) {
+          Object? data = snapshot.data?.data();
+          return Padding(
+              padding: EdgeInsets.only(left: 6.h, right: 22.h),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomImageView(
+                        imagePath: ImageConstant.imgRectangle77173x186,
+                        height: 173.v,
+                        width: 186.h,
+                        radius: BorderRadius.circular(94.h),
+                        margin: EdgeInsets.only(bottom: 18.v)),
+                    Padding(
+                        padding: EdgeInsets.only(top: 43.v),
+                        child: Column(children: [
+                          SizedBox(
+                              width: 72.h,
+                              child: Text('${(data as Map)['UserName']}',
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.center,
+                                  style: theme.textTheme.headlineLarge)),
+                          SizedBox(height: 25.v),
+                          CustomElevatedButton(
+                              height: 48.v,
+                              width: 102.h,
+                              text: "lbl_subscription".tr,
+                              buttonStyle: CustomButtonStyles.outlineBlackTL26,
+                              onPressed: () {
+                                onTapSubscription();
+                              })
+                        ]))
+                  ]));
+        }
+        return CircularProgressIndicator();
+      },
+    );
   }
 
   /// Section Widget
@@ -153,7 +187,8 @@ class ProfileScreen extends GetWidget<ProfileController> {
                                             Padding(
                                                 padding: EdgeInsets.only(
                                                     right: 24.h),
-                                                child: Text('${data['email']}',
+                                                child: Text(
+                                                    "msg_johndoe_gmail_com".tr,
                                                     style: CustomTextStyles
                                                         .bodyLargeBlack90001_1))
                                           ]))),
@@ -209,4 +244,19 @@ class ProfileScreen extends GetWidget<ProfileController> {
       AppRoutes.mealPlansScreen,
     );
   }
+
+  /* _fetch() async {
+    final firebaseUser = await FirebaseAuth.instance.currentUser!;
+    // if (firebaseUser != null) {
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(firebaseUser.uid)
+        .get()
+        .then((ds) {
+      ds.data;
+      print(myEmail);
+    }).catchError((e) {
+      print(e);
+    });
+  }*/
 }
