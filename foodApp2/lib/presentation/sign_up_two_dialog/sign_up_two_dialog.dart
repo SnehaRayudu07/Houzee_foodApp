@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:houzee/global/common/toast.dart';
 
 import 'controller/sign_up_two_controller.dart';
 import 'package:flutter/material.dart';
@@ -173,18 +174,33 @@ class SignUpTwoDialog extends StatelessWidget {
   }
 
   /// Navigates to the mainHomePageContainer1Screen when the action is triggered.
-  onTapNeverHungryAgain() {
-    FirebaseAuth.instance
-        .createUserWithEmailAndPassword(
-            email: controller.emailController.text,
-            password: controller.passwordController.text)
-        .then((value) {
-      print("Created new account");
-      Get.toNamed(
-        AppRoutes.mainHomePageContainer1Screen,
-      );
-    }).onError((error, stackTrace) {
+  onTapNeverHungryAgain() async {
+    try {
+      if (controller.confirmpasswordController.text !=
+          controller.passwordController.text) {
+        throw FirebaseAuthException(code: 'mismatched-password');
+      }
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+              email: controller.emailController.text,
+              password: controller.passwordController.text)
+          .then((value) {
+        print("Created new account");
+        Get.toNamed(
+          AppRoutes.mainHomePageContainer1Screen,
+        );
+      });
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'email-already-in-use') {
+        showToast(message: 'The email address is already in use');
+      } else if (e.code == 'mismatched-password') {
+        showToast(message: 'The passwords dont match');
+      } else {
+        showToast(message: 'An error occured: ${e.code}');
+      }
+    }
+    /*.onError((error, stackTrace) {
       print("Error ${error.toString()}");
-    });
+    });*/
   }
 }

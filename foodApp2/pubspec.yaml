@@ -6,6 +6,7 @@ environment:
 dependencies: 
   flutter: 
     sdk: flutter
+  fluttertoast: ^8.2.4
   get: ^4.6.6
   connectivity_plus: ^5.0.2
   shared_preferences: ^2.2.2

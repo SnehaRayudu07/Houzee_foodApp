@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:houzee/global/common/toast.dart';
 import 'package:houzee/widgets/custom_elevated_button.dart';
 
 import 'controller/android_large_one_controller.dart';
@@ -177,18 +178,24 @@ class AndroidLargeOneScreen extends GetWidget<AndroidLargeOneController> {
         });
   }
 
-  onTapSignIn() {
-    FirebaseAuth.instance
-        .signInWithEmailAndPassword(
-            email: controller.emailController.text,
-            password: controller.passwordController.text)
-        .then((value) {
-      Get.toNamed(
-        AppRoutes.mainHomePageContainer1Screen,
-      );
-    }).onError((error, stackTrace) {
-      print("Error ${error.toString()}");
-    });
+  onTapSignIn() async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: controller.emailController.text,
+              password: controller.passwordController.text)
+          .then((value) {
+        Get.toNamed(
+          AppRoutes.mainHomePageContainer1Screen,
+        );
+      });
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'invalid-credential') {
+        showToast(message: 'Invalid email or password');
+      } else {
+        showToast(message: 'An error occured: ${e.code}');
+      }
+    }
   }
 
   Widget _buildArrowUp() {
