@@ -90,7 +90,7 @@ class ProfileScreen extends GetWidget<ProfileController> {
                         child: Column(children: [
                           SizedBox(
                               width: 72.h,
-                              child: Text('${(data as Map)['UserName']}',
+                              child: Text('John Doe',
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.center,
