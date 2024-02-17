@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "892625712419",
+    "project_id": "houzee-8b3e8",
+    "storage_bucket": "houzee-8b3e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892625712419:android:80d60e52616465e45e8896",
+        "android_client_info": {
+          "package_name": "com.mycompany.houzee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUMNpvIEmezJkZnTRnfpEGsgaaOXhEN2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
