@@ -189,7 +189,8 @@ class _CookAuthWidgetState extends State<CookAuthWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                                  alignment:
+                                      const AlignmentDirectional(-1.0, -1.0),
                                   child: Text(
                                     'Verify Credentials',
                                     textAlign: TextAlign.start,
@@ -198,10 +199,12 @@ class _CookAuthWidgetState extends State<CookAuthWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment:
+                                      const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 24.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 0.0, 24.0),
                                     child: Text(
                                       'Get started by filling the credentials below',
                                       textAlign: TextAlign.start,
@@ -430,11 +433,10 @@ class _CookAuthWidgetState extends State<CookAuthWidget>
                                       },
                                       text: 'Verify',
                                       options: FFButtonOptions(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                        iconPadding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         textStyle: FlutterFlowTheme.of(context)
