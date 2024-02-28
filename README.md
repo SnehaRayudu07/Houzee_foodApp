@@ -12,11 +12,18 @@ Currently the repository contains code for the app's frontend, backend, and a pr
 -**Cooking Classes and Live Demos**: Homemakers can offer virtual cooking classes through the app.<br></br>
 -**Special Diet Filters**: Users can filter meals based on special dietary preferences such as vegetarian, vegan, gluten-free, or keto.<br></br>
 
+
 ## Tech Stack
 
 - **Flutter**: For a rich and responsive cross-platform frontend.<br></br>
 - **Firebase**: Powering the backend with Realtime Database, Firestore, Authentication, Cloud Functions, and Cloud Storage.<br></br>
 - **Google Maps API**: Enhancing user experience with accurate and real-time tracking.<br></br>
+
+## How to run the code?
+
+- This is a Flutter based application.
+- Debug the file Houzee/lib/main.dart on VScode using Flutter version 3.13.7
+- Make sure you uncheck "break on uncaught exceptions" option on the bottom left corner when the debugging starts.
 
 Made By:<br></br>
 Kapil Surya<br></br>
